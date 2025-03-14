@@ -9,7 +9,7 @@ const pokemonList = [
         imgSrc:"",
     }
 ];
-const pokelist = pokemonList.map;
+
 function PokemonCard() {
     const pokemon = pokemonList[1]
   
