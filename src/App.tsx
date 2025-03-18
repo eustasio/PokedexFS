@@ -12,6 +12,10 @@ const pokemonList = [
   {
       name: "mew",
       imgSrc:"https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/151.png",
+  },
+  {
+    name: "carapuce",
+    imgSrc: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png",
   }
 ];
 
@@ -25,19 +29,20 @@ function App() {
    
   }
   
-  const handleClick = () => {
-    setPokemonName( 'mew');
+  const handleClick = (name) => {
+    setPokemonName( name);
   } 
   
   return (
     <div>
     <PokemonCard pokemon={pokemon} />
-      <button type="button" onClick={handleClick}>
-      changer pokemon
-        </button>
-        <button type="button" onClick={() => setPokemonName("bulbizarre")}>
-          retour
+    <nav>
+        {pokemonList.map((pokemon) => (
+          <button key={pokemon.name} onClick={() => handleClick(pokemon.name)}>
+            {pokemon.name}
           </button>
+        ))}
+      </nav>
        
       </div> 
      
